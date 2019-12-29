@@ -3,7 +3,7 @@
 
 import numpy as np
 import math 
-import calculate_energy
+import myFunction
 
 
 def main():
@@ -24,10 +24,10 @@ def main():
     ep0 =       1   # vacuum permmitivity
 
     # calculate total electromagnetic energy
-    Ue = calculate_energy.calculate_energy(N1, N2, N3, L1, L2, L3, x_sour, y_sour, z_sour, Q, q, k, ep0) 
+    U = myFunction.GetSpringEnergy(N1, N2, N3, L1, L2, L3, x_sour, y_sour, z_sour, Q, q, k, ep0) 
 
     # print energy
-    print(Ue)  
+    print(U)  
     
 
 # check the program is main function or not.
