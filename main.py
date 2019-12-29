@@ -5,6 +5,9 @@ import numpy as np
 import math 
 import myFunction
 
+##################################################################
+# Assuming coordinate origin is at center of dielectric material #
+##################################################################
 
 def main():
 
@@ -18,8 +21,8 @@ def main():
     x_sour =    5   # position of external free charge (x)
     y_sour =    5   # position of external free charge (y)
     z_sour =    5   # position of external free charge (z)
-    Q =         1   # source charge
-    q =         1   # dipole charge for box
+    Q =         1   # external free charge
+    q =         1   # dipole charge per atom in dielectric material
     k =         1   # spring constant
     ep0 =       1   # vacuum permmitivity
 
