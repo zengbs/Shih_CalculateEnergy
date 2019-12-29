@@ -27,10 +27,18 @@ def main():
     ep0 =       1   # vacuum permmitivity
 
     # calculate total electromagnetic energy
-    U = myFunction.GetSpringEnergy(N1, N2, N3, L1, L2, L3, x_sour, y_sour, z_sour, Q, q, k, ep0) 
+    SpringEnergy    = myFunction.GetSpringEnergy   (N1, N2, N3, L1, L2, L3, x_sour, y_sour, z_sour, Q, q, k, ep0) 
+    DieletricEnergy = myFunction.GetDieletricEnergy(N1, N2, N3, L1, L2, L3, x_sour, y_sour, z_sour, Q, q, k, ep0) 
+    VacuumEnergy    = myFunction.GetVacuumEnergy   (N1, N2, N3, L1, L2, L3, x_sour, y_sour, z_sour, Q, q, k, ep0) 
+
+    Engy_Method1 = VacuumEnergy + SpringEnergy
+    Engy_Method2 = VacuumEnergy + DieletricEnergy
+
+    print(Engy_Method1)
+    print(Engy_Method2)
 
     # print energy
-    print(U)  
+    print()
     
 
 # check the program is main function or not.

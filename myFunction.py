@@ -41,7 +41,8 @@ def GetDieletricEnergy(N1, N2, N3, L1, L2, L3, x_external, y_external, z_externa
     x3 = 0.0                 # z coordinates of atoms
     Engy  = 0.0              # electro-magnetic energy
 
-    
+    dV = delta_x*delta_y*delta_z
+
     for i in range(1,N1+1):
         for j in range(1,N2+1):
             for k in range(1,N3+1):
@@ -50,9 +51,9 @@ def GetDieletricEnergy(N1, N2, N3, L1, L2, L3, x_external, y_external, z_externa
                 x2 = (-L2/2) + (j-1)*delta_y
                 x3 = (-L3/2) + (k-1)*delta_z
 
-                Engy += (1/(2*k)) * (q**2) * (0.25 * (1/math.pi) * (1/ep0) )**2 /   ( (x1 - x_external)**2 \
-                                                                                   +  (x2 - y_external)**2 \
-                                                                                   +  (x3 - z_external)**2  )
+                Engy += (1/(2*k)) * (q**2) / dV * (0.25 * (1/math.pi) * (1/ep0) )**2 /   ( (x1 - x_external)**2 \
+                                                                                        +  (x2 - y_external)**2 \
+                                                                                        +  (x3 - z_external)**2  ) * dV
 
     return Engy
     
